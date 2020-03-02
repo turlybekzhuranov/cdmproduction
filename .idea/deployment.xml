@@ -5,7 +5,7 @@
       <paths name="green.ttc.kz">
         <serverdata>
           <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
+            <mapping local="C:/xampp/htdocs/zarina" web="/" />
           </mappings>
         </serverdata>
       </paths>
