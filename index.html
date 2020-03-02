@@ -23,6 +23,32 @@
     ================================================== -->
     <script src="js/modernizr.js"></script>
     <script src="js/pace.min.js"></script>
+    <script type="text/javascript" src="js/map.js"></script>
+    <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+
+    <script type="text/javascript">
+        let map;
+
+        DG.then(function () {
+            map = DG.map('map', {
+                center: [51.123198, 71.434307],
+                zoom: 15,
+                poi: true
+            });
+            let myIcon = DG.icon({
+                iconUrl: 'images/logo.png',
+                iconRetinaUrl: 'images/logo_old.png',
+                iconSize: [75, 75],
+                iconAnchor: [22, 94],
+                popupAnchor: [-3, -76],
+                shadowSize: [68, 95],
+                shadowAnchor: [22, 94]
+            });
+            DG.marker([51.123198, 71.434307], {icon: myIcon}).addTo(map).bindPopup('12 этаж; 1203 офис');
+        });
+    </script>
+
+
 
     <!-- favicons
     ================================================== -->
@@ -694,9 +720,7 @@
     <div class="row section-header" data-aos="fade-up">
         <div class="col-full">
             <h3 data-num="05" class="subhead">Get In Touch</h3>
-            <h1 class="display-1 display-1--light">Have an idea or an epic project in mind? Talk to
-                us. Let’s work together and make something
-                great. Drop us a line at <a href="mailto:#0">hello@stellar.com</a></h1>
+            <div id="map" class="display-1 display-18#45;&#45;light" style="width:100%; height:400px; position: relative; outline: none"></div>
         </div>
     </div>
 
